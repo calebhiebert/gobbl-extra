@@ -1,5 +1,5 @@
-github.com/calebhiebert/gobbl v0.0.0-20190518200348-c7c97327009f h1:kv6YWEX+VBa2uF86o3knRrn4G4VczS7N78xm1z3D2yk=
-github.com/calebhiebert/gobbl v0.0.0-20190518200348-c7c97327009f/go.mod h1:DATVw7ATYyQR8cosK0WYTDlbp/y+i0QmEekYeAz36IE=
+github.com/calebhiebert/gobbl v0.0.1 h1:lVcjeD1ErVdhC6HQzaeMPd1WjMiqnXk+N1siOty3kcg=
+github.com/calebhiebert/gobbl v0.0.1/go.mod h1:DATVw7ATYyQR8cosK0WYTDlbp/y+i0QmEekYeAz36IE=
 github.com/calebhiebert/gobbl/session v0.0.0-20190518200348-c7c97327009f h1:sM62SNcQnBl4X7rpp0e5pTDJRaCIxAz14b2pissIIog=
 github.com/calebhiebert/gobbl/session v0.0.0-20190518200348-c7c97327009f/go.mod h1:i2WT+GaYPv+hHdRLoxqrDQBm5UfZIzVVSQPGcWJ7w5o=
 github.com/fsnotify/fsnotify v1.4.7 h1:IXs+QLmnXW2CcXuY+8Mzv/fWEsPGWxqefPtCP5CnV9I=

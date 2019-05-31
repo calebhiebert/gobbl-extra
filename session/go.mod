@@ -3,7 +3,7 @@ module github.com/calebkhiebert/gobbl-extra/session
 go 1.12
 
 require (
-	github.com/calebhiebert/gobbl v0.0.0-20190518200348-c7c97327009f
+	github.com/calebhiebert/gobbl v0.0.1
 	github.com/calebhiebert/gobbl/session v0.0.0-20190518200348-c7c97327009f
 	github.com/go-redis/redis v6.15.2+incompatible
 	github.com/golang/protobuf v1.3.1 // indirect
