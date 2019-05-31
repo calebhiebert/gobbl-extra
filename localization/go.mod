@@ -1,4 +1,4 @@
-module github.com/calebkhiebert/gobbl-extra/localization
+module github.com/calebhiebert/gobbl-extra/localization
 
 go 1.12
 

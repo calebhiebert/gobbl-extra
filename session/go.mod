@@ -1,4 +1,4 @@
-module github.com/calebkhiebert/gobbl-extra/session
+module github.com/calebhiebert/gobbl-extra/session
 
 go 1.12
 

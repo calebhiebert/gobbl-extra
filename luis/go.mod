@@ -1,4 +1,4 @@
-module github.com/calebkhiebert/gobbl-extra/luis
+module github.com/calebhiebert/gobbl-extra/luis
 
 go 1.12
 

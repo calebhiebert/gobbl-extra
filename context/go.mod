@@ -1,4 +1,4 @@
-module github.com/calebkhiebert/gobbl-extra/context
+module github.com/calebhiebert/gobbl-extra/context
 
 go 1.12
 

@@ -1,4 +1,4 @@
-module github.com/calebkhiebert/gobbl-extra/rasa
+module github.com/calebhiebert/gobbl-extra/rasa
 
 go 1.12
 

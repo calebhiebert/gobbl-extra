@@ -1,4 +1,4 @@
-module github.com/calebkhiebert/gobbl-extra/dflow
+module github.com/calebhiebert/gobbl-extra/dflow
 
 go 1.12
 

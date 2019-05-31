@@ -1,4 +1,4 @@
-module github.com/calebkhiebert/gobbl-extra/messenger
+module github.com/calebhiebert/gobbl-extra/messenger
 
 go 1.12
 

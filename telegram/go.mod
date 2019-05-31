@@ -1,4 +1,4 @@
-module github.com/calebkhiebert/gobbl-extra/telegram
+module github.com/calebhiebert/gobbl-extra/telegram
 
 go 1.12
 

@@ -1,4 +1,4 @@
-module github.com/calebkhiebert/gobbl-extra/ab
+module github.com/calebhiebert/gobbl-extra/ab
 
 go 1.12
 
