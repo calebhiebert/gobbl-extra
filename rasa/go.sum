@@ -1,5 +1,5 @@
-github.com/calebhiebert/gobbl v0.0.2 h1:s+tspHdwmhMrY4ZX2hR3tBX1YNb04kSU6eAQdXfrf0U=
-github.com/calebhiebert/gobbl v0.0.2/go.mod h1:DATVw7ATYyQR8cosK0WYTDlbp/y+i0QmEekYeAz36IE=
+github.com/calebhiebert/gobbl v0.0.4 h1:cszyJGF7v7F+A40LCGKeNqufadzL3oaXKTg0d3niRbQ=
+github.com/calebhiebert/gobbl v0.0.4/go.mod h1:DATVw7ATYyQR8cosK0WYTDlbp/y+i0QmEekYeAz36IE=
 github.com/logrusorgru/aurora v0.0.0-20190428105938-cea283e61946 h1:z+WaKrgu3kCpcdnbK9YG+JThpOCd1nU5jO5ToVmSlR4=
 github.com/logrusorgru/aurora v0.0.0-20190428105938-cea283e61946/go.mod h1:7rIyQOR62GCctdiQpZ/zOJlFyk6y+94wXzv6RNZgaR4=
 github.com/matoous/go-nanoid v0.0.0-20190515092250-e998f83de84d h1:SZ/jkfEtIP9zCGc+UvWc5+B74ZfY0Apv8+Mih1piI8M=

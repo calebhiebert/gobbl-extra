@@ -216,10 +216,14 @@ func TextCardElement(title, subtitle string) GenericTemplateElement {
 func ImageCardElementClickable(title, subtitle, imageURL, actionURL string) GenericTemplateElement {
 	gt := ImageCardElement(title, subtitle, imageURL)
 
+	webviewHeightRatio := "tall"
+
 	gt.DefaultAction = &DefaultAction{
-		Type:               "web_url",
-		URL:                actionURL,
-		WebviewHeightRatio: "tall",
+		URLCommon: URLCommon{
+			WebviewHeightRatio: &webviewHeightRatio,
+		},
+		Type: "web_url",
+		URL:  actionURL,
 	}
 
 	return gt
