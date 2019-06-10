@@ -136,10 +136,11 @@ type MessageSendResponse struct {
 }
 
 type MessengerProfile struct {
-	AccountLinkingURL string           `json:"account_linking_url,omitempty"`
-	GetStarted        GetStarted       `json:"get_started,omitempty"`
-	PersistentMenu    []PersistentMenu `json:"persistent_menu,omitempty"`
-	Greeting          []Greeting       `json:"greeting,omitempty"`
+	AccountLinkingURL  string           `json:"account_linking_url,omitempty"`
+	GetStarted         GetStarted       `json:"get_started,omitempty"`
+	PersistentMenu     []PersistentMenu `json:"persistent_menu,omitempty"`
+	Greeting           []Greeting       `json:"greeting,omitempty"`
+	WhitelistedDomains []string         `json:"whitelisted_domains,omitempty"`
 }
 
 type GetStarted struct {
