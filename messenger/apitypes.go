@@ -97,6 +97,7 @@ type GenericTemplateElement struct {
 }
 
 type Button struct {
+	URLCommon
 	Type          string                `json:"type,omitempty"`
 	URL           string                `json:"url,omitempty"`
 	Title         string                `json:"title,omitempty"`
@@ -115,12 +116,10 @@ type UploadableAttachmentPayload struct {
 }
 
 type DefaultAction struct {
-	URL                 string `json:"url"`
-	Type                string `json:"type"`
-	WebviewHeightRatio  string `json:"webview_height_ratio,omitempty"`
-	MessengerExtensions bool   `json:"messenger_extensions,omitempty"`
-	FallbackURL         string `json:"fallback_url,omitempty"`
-	WebviewShareButton  string `json:"webview_share_button,omitempty"`
+	URLCommon
+	URL                string `json:"url"`
+	Type               string `json:"type"`
+	WebviewShareButton string `json:"webview_share_button,omitempty"`
 }
 
 type QuickReply struct {
@@ -168,4 +167,10 @@ type MenuItem struct {
 type Greeting struct {
 	Locale string `json:"locale"`
 	Text   string `json:"text"`
+}
+
+type URLCommon struct {
+	WebviewHeightRatio  *string `json:"webview_height_ratio,omitempty"`
+	MessengerExtensions *bool   `json:"messenger_extensions,omitempty"`
+	FallbackURL         *string `json:"fallback_url,omitempty"`
 }
