@@ -1,5 +1,5 @@
-github.com/calebhiebert/gobbl v0.0.4 h1:cszyJGF7v7F+A40LCGKeNqufadzL3oaXKTg0d3niRbQ=
-github.com/calebhiebert/gobbl v0.0.4/go.mod h1:DATVw7ATYyQR8cosK0WYTDlbp/y+i0QmEekYeAz36IE=
+github.com/calebhiebert/gobbl v0.0.5 h1:47pjyfdSyGLnM3Bj6wRx3XgJF/YKIU53zKl45JXMnv4=
+github.com/calebhiebert/gobbl v0.0.5/go.mod h1:DATVw7ATYyQR8cosK0WYTDlbp/y+i0QmEekYeAz36IE=
 github.com/go-telegram-bot-api/telegram-bot-api v4.6.4+incompatible h1:2cauKuaELYAEARXRkq2LrJ0yDDv1rW7+wrTEdVL3uaU=
 github.com/go-telegram-bot-api/telegram-bot-api v4.6.4+incompatible/go.mod h1:qf9acutJ8cwBUhm1bqgz6Bei9/C/c93FPDljKWwsOgM=
 github.com/logrusorgru/aurora v0.0.0-20190428105938-cea283e61946 h1:z+WaKrgu3kCpcdnbK9YG+JThpOCd1nU5jO5ToVmSlR4=
