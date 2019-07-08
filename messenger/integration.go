@@ -20,6 +20,30 @@ import (
 	. "github.com/logrusorgru/aurora"
 )
 
+// Flags
+const (
+	FlagIsStandby = "fb:isstandby"
+	FlagIsEcho = "fb:isecho"
+	FlagSendingAppID = "fb:sendingappid"
+	FlagEventType = "fb:eventtype"
+	FlagLocation = "fb:location"
+	FlagAttachmentURL = "fb:attachmenturl"
+	FlagReferral = "fb:referral"
+	FlagHandoverMetadata = "fb:handover:metadata"
+)
+
+// Event Types
+const (
+	EventTypeRetarget = "retarget"
+	EventTypeReferral = "referral"
+	EventTypeTakeThreadControl = "take_thread_control"
+	EventTypePayload = "payload"
+	EventTypeCoordinates = "coordinates"
+	EventTypeAttachment = "attachment"
+	EventTypeMessage = "message"
+	EventTypeQuickReply = "quickreply"
+)
+
 type MessengerIntegration struct {
 	API            *MessengerAPI
 	Bot            *gbl.Bot
@@ -55,7 +79,7 @@ func (m *MessengerIntegration) GenericRequest(c *gbl.Context) (gbl.GenericReques
 
 		if fbRequest.IsStandby {
 			c.Trace("CURRENT MESSAGE IS STANDBY")
-			c.Flag("fb:isstandby", true)
+			c.Flag(FlagIsStandby, true)
 		}
 
 		// Check for a message id
@@ -63,36 +87,36 @@ func (m *MessengerIntegration) GenericRequest(c *gbl.Context) (gbl.GenericReques
 
 			if fbRequest.Message.IsEcho == true {
 				c.Trace("CURRENT MESSAGE IS ECHO")
-				c.Flag("fb:isecho", true)
+				c.Flag(FlagIsEcho, true)
 			}
 
 			if fbRequest.Message.AppID != 0 {
-				c.Flag("fb:sendingappid", fmt.Sprintf("%d", fbRequest.Message.AppID))
+				c.Flag(FlagSendingAppID, fmt.Sprintf("%d", fbRequest.Message.AppID))
 			}
 
 			// Check for a quickreply payload
 			if fbRequest.Message.QuickReply.Payload != "" {
 				genericRequest.Text = fbRequest.Message.QuickReply.Payload
-				c.Flag("fb:eventtype", "quickreply")
+				c.Flag(FlagEventType, EventTypeQuickReply)
 
 				// Check for message text
 			} else if fbRequest.Message.Text != "" {
 				genericRequest.Text = fbRequest.Message.Text
-				c.Flag("fb:eventtype", "message")
+				c.Flag(FlagEventType, EventTypeMessage)
 
 				// Check for coordinates
 			} else if len(fbRequest.Message.Attachments) > 0 && fbRequest.Message.Attachments[0].Payload.Coordinates.Lat != 0 {
 				genericRequest.Text = fmt.Sprintf("COORDS LAT %f LONG %f",
 					fbRequest.Message.Attachments[0].Payload.Coordinates.Lat,
 					fbRequest.Message.Attachments[0].Payload.Coordinates.Long)
-				c.Flag("fb:eventtype", "coordinates")
-				c.Flag("fb:location", fbRequest.Message.Attachments[0].Payload.Coordinates)
+				c.Flag(FlagEventType, EventTypeCoordinates)
+				c.Flag(FlagLocation, fbRequest.Message.Attachments[0].Payload.Coordinates)
 
 				// Check for an attachment
 			} else if len(fbRequest.Message.Attachments) > 0 && fbRequest.Message.Attachments[0].Payload.URL != "" {
 				genericRequest.Text = fbRequest.Message.Attachments[0].Payload.URL
-				c.Flag("fb:eventtype", "attachment")
-				c.Flag("fb:attachmenturl", fbRequest.Message.Attachments[0].Payload.URL)
+				c.Flag(FlagEventType, EventTypeAttachment)
+				c.Flag(FlagAttachmentURL, fbRequest.Message.Attachments[0].Payload.URL)
 			}
 
 			// Check for a postback title
@@ -106,24 +130,24 @@ func (m *MessengerIntegration) GenericRequest(c *gbl.Context) (gbl.GenericReques
 			} else {
 				genericRequest.Text = fbRequest.Postback.Title
 			}
-			c.Flag("fb:eventtype", "payload")
+			c.Flag(FlagEventType, EventTypePayload)
 
 			if fbRequest.Postback.Referral.Ref != "" {
-				c.Flag("fb:referral", fbRequest.Postback.Referral)
+				c.Flag(FlagReferral, fbRequest.Postback.Referral)
 			}
 
 			// Check for a referral
 		} else if fbRequest.Referral.Ref != "" {
 			genericRequest.Text = fbRequest.Referral.Ref
-			c.Flag("fb:eventtype", "referral")
-			c.Flag("fb:referral", fbRequest.Referral)
+			c.Flag(FlagEventType, EventTypeReferral)
+			c.Flag(FlagReferral, fbRequest.Referral)
 		} else if fbRequest.TakeThreadControl.PreviousOwnerAppID != 0 {
-			c.Flag("fb:eventtype", "take_thread_control")
-			c.Flag("fb:handover:metadata", fbRequest.TakeThreadControl.Metadata)
+			c.Flag(FlagEventType, EventTypeTakeThreadControl)
+			c.Flag(FlagHandoverMetadata, fbRequest.TakeThreadControl.Metadata)
 		}
 	case RetargetRawRequest:
 		genericRequest.Text = "RETARGET"
-		c.Flag("fb:eventtype", "retarget")
+		c.Flag(FlagEventType, EventTypeRetarget)
 	}
 
 	return genericRequest, nil
