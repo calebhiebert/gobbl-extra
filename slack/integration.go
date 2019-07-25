@@ -169,3 +169,7 @@ func (m *SlackIntegration) ServeHTTP(rw http.ResponseWriter, req *http.Request) 
 
 	}
 }
+
+func (m *SlackIntegration) GetAPI() *slack.Client {
+	return m.api
+}
