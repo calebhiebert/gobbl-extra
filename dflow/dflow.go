@@ -27,11 +27,11 @@ type Config struct {
 type Response struct {
 	ResponseID  string `json:"responseId"`
 	QueryResult struct {
-		QueryText                string                 `json:"queryText"`
-		Action                   string                 `json:"action"`
-		Parameters               map[string]interface{} `json:"parameters"`
-		AllRequiredParamsPresent bool                   `json:"allRequiredParamsPresent"`
-		FulfillmentText          string                 `json:"fulfillmentText"`
+		QueryText                string            `json:"queryText"`
+		Action                   string            `json:"action"`
+		Parameters               map[string]string `json:"parameters"`
+		AllRequiredParamsPresent bool              `json:"allRequiredParamsPresent"`
+		FulfillmentText          string            `json:"fulfillmentText"`
 		FulfillmentMessages      []struct {
 			Text struct {
 				Text []string `json:"text"`
